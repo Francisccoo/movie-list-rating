@@ -1,5 +1,5 @@
 import { MovieItem  } from './../models/movie-item.model';
-import { Action  } from '@ngrx/store'
+import { Action  } from '@ngrx/store';
 
 export enum MovieActionTypes {
 

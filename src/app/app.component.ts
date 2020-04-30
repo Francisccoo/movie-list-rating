@@ -4,8 +4,10 @@ import { Store } from '@ngrx/store';
 import { AppState } from './store/models/app-state.model';
 import { Observable } from 'rxjs';
 
-import { MovieItem } from './store/models/movie-item.model';
+import { v4 as uuid } from 'uuid';
 
+import { MovieItem } from './store/models/movie-item.model';
+import { AddItemAction } from './store/actions/movie.actions';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,7 @@ import { MovieItem } from './store/models/movie-item.model';
 export class AppComponent implements OnInit{
   
 movieItems: Observable<Array<MovieItem>>
+newMovieItem: MovieItem = { id: '', title: '' }
 
   constructor(private store: Store<AppState>) { }  
 
@@ -24,6 +27,15 @@ movieItems: Observable<Array<MovieItem>>
  
   	this.movieItems = this.store.select(store => store.movie)
 
+  }
+
+  addItem() {
+
+  	this.newMovieItem.id = uuid();
+
+  	this.store.dispatch(new AddItemAction(this.newMovieItem));
+
+  	this.newMovieItem = { id: '', title: '' }
   }
 
   //title = 'ngrx-movie-list';

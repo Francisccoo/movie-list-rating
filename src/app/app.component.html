@@ -5,13 +5,17 @@
       <h2>Movie List</h2>
 
       <ul>
-        <li *ngFor="let movie of movieItems | async">
-            {{ movie.id }}
+        <li *ngFor="let movie of movieItems | async">            
             {{ movie.title }}
           </li>
         
       </ul>
     </div>
   </div>
+
+  <form (ngSubmit)="addItem()">
+      <input type="text" [(ngModel)]="newMovieItem.title" placeholder="Add a movie here" name="itemName"/>
+      <button type="submit" >+</button>
+    </form>
   
 </div>
