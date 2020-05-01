@@ -1,21 +1,46 @@
 <div id="wrapper">
-  
+
   <div id="shopping-list">
     <div id="list">
       <h2>Movie List</h2>
+        <table>
+          <thead>
+              <tr>
+                <!--<th>ID</th>-->
+                <th>TITLE</th>
+                <th>RATE</th>
+                <th>#</th>
+              </tr>
+            </thead>
+              <tr *ngFor="let movie of movieItems | async">
+                <!--
+                <td>                  
+                  {{ movie.id }}
+                </td>
+                -->
+                <td>
+                  {{ movie.title }}
+                </td>
+                <td>
+                  <span id="rate">
+                  {{ movie.rate }}
+                  </span>
+                </td>
 
-      <ul>
-        <li *ngFor="let movie of movieItems | async">            
-            {{ movie.title }}
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+                <td>
+                  <button (click)="removeItem(movie.id)">REMOVE</button>
+                </td>
 
-  <form (ngSubmit)="addItem()">
-      <input type="text" [(ngModel)]="newMovieItem.title" placeholder="Add a movie here" name="itemName"/>
-      <button type="submit" >+</button>
-    </form>
-  
-</div>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+
+        <form (ngSubmit)="addItem()">
+          <input type="text" [(ngModel)]="newMovieItem.title" placeholder="Add a movie here" name="itemTitle"/>
+          <input type="number" [(ngModel)]="newMovieItem.rate" placeholder="Rate it" name="itemRate"/>
+          <button type="submit" >ADD</button>
+        </form>
+
+      </div>

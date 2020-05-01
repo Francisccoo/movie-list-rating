@@ -8,6 +8,7 @@ import { v4 as uuid } from 'uuid';
 
 import { MovieItem } from './store/models/movie-item.model';
 import { AddItemAction } from './store/actions/movie.actions';
+import { RemoveItemAction } from './store/actions/movie.actions';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,9 @@ import { AddItemAction } from './store/actions/movie.actions';
 export class AppComponent implements OnInit{
   
 movieItems: Observable<Array<MovieItem>>
-newMovieItem: MovieItem = { id: '', title: '' }
+//newMovieItem: MovieItem = { id: '', title: '' }
+
+newMovieItem: MovieItem = { id: null, title: '', rate: null }
 
   constructor(private store: Store<AppState>) { }  
 
@@ -34,12 +37,17 @@ newMovieItem: MovieItem = { id: '', title: '' }
   	this.newMovieItem.id = uuid();
 
   	this.store.dispatch(new AddItemAction(this.newMovieItem));
+  	
+	this.newMovieItem = { id: null, title: '', rate: null }
 
-  	this.newMovieItem = { id: '', title: '' }
+  }
+
+  removeItem(id: string) {
+  	this.store.dispatch(new RemoveItemAction(id));
+
   }
 
   //title = 'ngrx-movie-list';
-
-  
+ 
 }
 

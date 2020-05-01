@@ -11,23 +11,26 @@
 }
 
 #shopping-list {
-  box-shadow: 20px 20px 0px #222f3e;
+  box-shadow: 20px 40px 0px #222f3e;
 }
+
+/* FORM */
 
 form {
   display: flex;
   flex-direction: row;
 }
 
-form > input {
+form>input {
   flex-grow: 1;
   outline: none;
   padding-left: 4px;
   border: 0px;
   height: 20px;
+  border: 1px solid grey;
 }
 
-form > button {
+form>button {
   border: 0px;
   background: #10ac84;
   color: white;
@@ -54,3 +57,32 @@ h2 {
   padding: 10px 0px;
   margin: 0px;
 }
+
+#rate {
+
+  color: #ffff00;
+
+}
+
+/* TABLE */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+   background: #1dd1a1;
+   text-align: center;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+
+
+
+
+
