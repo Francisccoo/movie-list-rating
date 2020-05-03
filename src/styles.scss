@@ -1,5 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 body {
-  background-color: #576574;
+  background-color: #343a40;
+}
+
+h2 {
+	text-align: center;
+}
+
+.table, h2 {
+	color: #fff !important;
+}
+
+#rate {
+	color: #ffec07;
+}
+
+input.form-control {
+	width: 20% !important;
+	margin-right: 1rem;
+}
+
+form {
+	display: flex;
 }
