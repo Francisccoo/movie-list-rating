@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-//import { StoreReducer } from './store/reducers/movie.reducer';
 import { MovieReducer } from './store/reducers/movie.reducer';
+
+import { NgpSortModule } from 'ngp-sort-pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MovieReducer } from './store/reducers/movie.reducer';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    NgpSortModule,
+    FormsModule,    
     StoreModule.forRoot({
     		movie: MovieReducer
 

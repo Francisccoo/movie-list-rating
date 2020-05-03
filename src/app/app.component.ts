@@ -19,7 +19,7 @@ import { RemoveItemAction } from './store/actions/movie.actions';
 export class AppComponent implements OnInit{
   
 movieItems: Observable<Array<MovieItem>>
-//newMovieItem: MovieItem = { id: '', title: '' }
+
 
 newMovieItem: MovieItem = { id: null, title: '', rate: null }
 
@@ -28,26 +28,29 @@ newMovieItem: MovieItem = { id: null, title: '', rate: null }
 
   ngOnInit(): void {
  
-  	this.movieItems = this.store.select(store => store.movie)
+  	this.movieItems = this.store.select(store => store.movie);
 
-  }
+  	//setTimeout(() => this.addItem(), 5000);
+
+  	}
 
   addItem() {
 
+  	
   	this.newMovieItem.id = uuid();
 
   	this.store.dispatch(new AddItemAction(this.newMovieItem));
   	
 	this.newMovieItem = { id: null, title: '', rate: null }
-
+		
   }
 
-  removeItem(id: string) {
+
+ removeItem(id: string) {
   	this.store.dispatch(new RemoveItemAction(id));
 
   }
 
-  //title = 'ngrx-movie-list';
- 
+  
 }
 

@@ -71,9 +71,8 @@ export function MovieReducer(state: Array<MovieItem> = initialState, action: Mov
 			switch(action.type) {
 				case MovieActionTypes.ADD_ITEM:
 					return [...state, action.payload];
-
 				case MovieActionTypes.REMOVE_ITEM:
-					return state.filter(item => item.id !== action.payload);	
+					return state.filter(item => item.id !== action.payload);				
 				default:
 					return state;
 			}

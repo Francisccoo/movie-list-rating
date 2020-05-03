@@ -4,12 +4,7 @@ import { Action  } from '@ngrx/store';
 export enum MovieActionTypes {
 
 	ADD_ITEM = '[MOVIE] Add Item',
-	REMOVE_ITEM = '[MOVIE] Remove Item'
-
-	/*
-	ADD_ITEM_SUCCES = '[MOVIE] Add Item Success',
-	ADD_ITEM_FAILURE = '[MOVIE] Add Item Failure',
-	*/
+	REMOVE_ITEM = '[MOVIE] Remove Item',
 
 }
 
@@ -28,7 +23,5 @@ export class RemoveItemAction implements Action {
 	constructor(public payload: string) {}
 
 }
-
-//export class SortItemAction implements Action
 
 export type MovieAction = AddItemAction | RemoveItemAction;
