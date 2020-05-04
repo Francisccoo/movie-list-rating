@@ -5,7 +5,7 @@ Steps to proceed:
 
 2) Enter to the console and type <code>npm i</code> inside the root project folder to install the packages needed to run the app correctly, including the ngrx/store framework.
 
-Now, for an easy understanding of the application, we splitted the structure in diverse folders for an improve maintenance:
+Now, for an easy understanding of the application, we splitted the structure in diverse folders for an improve maintenance. You can check the screenshot supplied in the <code>images</code> folder more information:
 
  - The store folder contains all the elements related to the ngrx/store framework, the data, behaviours, etc. Inside this folder we can find another three folders, such as:
 
