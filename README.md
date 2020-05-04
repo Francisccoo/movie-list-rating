@@ -7,6 +7,7 @@ Steps to proceed:
 
 Now, for an easy understanding of the application, we splitted the structure in diverse folders for an improve maintenance:
 
+<code>
 Movie-List-Rating
 	|
 	|_ src
@@ -15,7 +16,7 @@ Movie-List-Rating
 		     |_ actions
 		     |_ models
 		     |_ reducers
-
+</code>
 
  - The store folder contains all the elements related to the ngrx/store framework, the data, behaviours, etc. Inside this folder we can find another three folders, such as:
 
@@ -25,7 +26,7 @@ Movie-List-Rating
 
 	c) Reducers: Here we can find the JSON file that contains all the movie list data, and also the function that manages the current state of the app.
 
- - It's important to check both app.module.ts and app.component.ts inside the app folder, as they contain some code that launches functions and events.
+ - It's important to check both <code>app.module.ts</code> and <code>app.component.ts</code> inside the app folder, as they contain some code that launches functions and events.
 
- - For the UI, we decided to implement Bootstrap, you can check the styles.scss file, inside the src folder. We imported directly, as we also declared some CSS selectors
+ - For the UI, we decided to implement Bootstrap, you can check the <code>styles.scss</code> file, inside the src folder. We imported directly, as we also declared some CSS selectors
 to improve the good looking of the app.
