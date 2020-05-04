@@ -7,17 +7,6 @@ Steps to proceed:
 
 Now, for an easy understanding of the application, we splitted the structure in diverse folders for an improve maintenance:
 
-<code>
-Movie-List-Rating
-	|
-	|_ src
-	    |_ app
-		|_ store
-		     |_ actions
-		     |_ models
-		     |_ reducers
-</code>
-
  - The store folder contains all the elements related to the ngrx/store framework, the data, behaviours, etc. Inside this folder we can find another three folders, such as:
 
 	a) Actions: Here we store the files where that contains the "actions" (things that can do) that represent the main events occurring thoughout our application.
