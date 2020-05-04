@@ -1,6 +1,8 @@
 import { MovieItem  } from './../models/movie-item.model';
 import { Action  } from '@ngrx/store';
 
+
+//Actions we can take, such as add or remove an item -> movie
 export enum MovieActionTypes {
 
 	ADD_ITEM = '[MOVIE] Add Item',
@@ -8,6 +10,7 @@ export enum MovieActionTypes {
 
 }
 
+//Action that adds an item
 export class AddItemAction implements Action {
 
 	readonly type = MovieActionTypes.ADD_ITEM;
@@ -16,6 +19,7 @@ export class AddItemAction implements Action {
 
 }
 
+//Action that removes an item
 export class RemoveItemAction implements Action {
 
 	readonly type = MovieActionTypes.REMOVE_ITEM;
@@ -24,4 +28,5 @@ export class RemoveItemAction implements Action {
 
 }
 
+//We export both actions to import later in the app.component.ts file
 export type MovieAction = AddItemAction | RemoveItemAction;

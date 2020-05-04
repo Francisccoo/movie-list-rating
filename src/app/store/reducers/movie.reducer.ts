@@ -1,6 +1,7 @@
 import { MovieItem } from "../models/movie-item.model"
 import { MovieAction, MovieActionTypes } from '../actions/movie.actions';
 
+//JSON that contains our movie list
 const initialState: Array<MovieItem> = [
 
 	{
@@ -68,10 +69,11 @@ const initialState: Array<MovieItem> = [
 export function MovieReducer(state: Array<MovieItem> = initialState, action: MovieAction) 
 
 		{
+			//We manage the current state by a switch-case
 			switch(action.type) {
-				case MovieActionTypes.ADD_ITEM:
+				case MovieActionTypes.ADD_ITEM: //In case it's to ADD... 
 					return [...state, action.payload];
-				case MovieActionTypes.REMOVE_ITEM:
+				case MovieActionTypes.REMOVE_ITEM: //In case it's to REMOVE...
 					return state.filter(item => item.id !== action.payload);				
 				default:
 					return state;

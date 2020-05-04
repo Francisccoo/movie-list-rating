@@ -17,37 +17,38 @@ import { RemoveItemAction } from './store/actions/movie.actions';
 })
 
 export class AppComponent implements OnInit{
-  
+
+//Reference of the JSON   
 movieItems: Observable<Array<MovieItem>>
 
-
+//Reference when we create/add a new movie
 newMovieItem: MovieItem = { id: null, title: '', rate: null }
 
   constructor(private store: Store<AppState>) { }  
 
-
+//When initialize the app, it shows a list of movies
   ngOnInit(): void {
  
   	this.movieItems = this.store.select(store => store.movie);
 
-  	//setTimeout(() => this.addItem(), 5000);
+  	/*setTimeout(() => this.addItem(), 5000);*/
 
   	}
 
+//Adding a new movie to the list
   addItem() {
-
   	
   	this.newMovieItem.id = uuid();
 
-  	this.store.dispatch(new AddItemAction(this.newMovieItem));
+  	this.store.dispatch(new AddItemAction(this.newMovieItem)); //We're calling the add action from movie.actions.ts
   	
-	this.newMovieItem = { id: null, title: '', rate: null }
+	 this.newMovieItem = { id: null, title: '', rate: null }
 		
   }
 
-
+//Removes a movie from the list
  removeItem(id: string) {
-  	this.store.dispatch(new RemoveItemAction(id));
+  	this.store.dispatch(new RemoveItemAction(id)); //We're calling the remove action from movie.actions.ts
 
   }
 
